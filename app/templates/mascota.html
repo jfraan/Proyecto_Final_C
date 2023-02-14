@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ mascota.nombre }}</h1>
+  <ul>
+    <li>Raza: {{ mascota.raza }}</li>
+    <li>Fecha de nacimiento: {{ mascota.fecha_nacimiento.strftime('%d/%m/%Y') }}</li>
+    <li>Propietario: <a href="{{ url_for('main.mostrar_propietario', id=mascota.propietario.id) }}">{{ mascota.propietario.nombre }}</a></li>
+  </ul>
+{% endblock %}

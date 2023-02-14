@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Clínica Veterinaria Pulpin</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('main.index') }}">Inicio</a></li>
+          <li><a href="{{ url_for('main.listar_mascotas') }}">Mascotas</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>
