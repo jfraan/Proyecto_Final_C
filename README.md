@@ -24,7 +24,7 @@
 ## Key Features
 
 * Platafrmas
-  - Windows, macOS and Linux ready.
+  - Windows, macOS y Linux .
 
 ## Como usar
 ## Instalación
