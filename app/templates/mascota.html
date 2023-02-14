@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
 
+{% block title %}{{ mascota.nombre }}{% endblock %}
+
 {% block content %}
-  <h1>{{ mascota.nombre }}</h1>
-  <ul>
-    <li>Raza: {{ mascota.raza }}</li>
-    <li>Fecha de nacimiento: {{ mascota.fecha_nacimiento.strftime('%d/%m/%Y') }}</li>
-    <li>Propietario: <a href="{{ url_for('main.mostrar_propietario', id=mascota.propietario.id) }}">{{ mascota.propietario.nombre }}</a></li>
-  </ul>
+  <h2>{{ mascota.nombre }}</h2>
+  <p>Raza: {{ mascota.raza }}</p>
+  <p>Fecha de nacimiento: {{ mascota.fecha_nacimiento.strftime('%d/%m/%Y') }}</p>
+
+  <h3>Propietario</h3>
+  <p>Nombre: {{ mascota.propietario.nombre }}</p>
+  <p>Teléfono: {{ mascota.propietario.telefono }}</p>
+
+  <a href="{{ url_for('main.editar_mascota', id=mascota.id) }}">Editar</a>
 {% endblock %}

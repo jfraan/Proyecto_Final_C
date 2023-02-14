@@ -6,7 +6,7 @@ from app.models import Mascota, Propietario
 main_routes = Blueprint('main', __name__)
 api_routes = Blueprint('api', __name__)
 
-
+# Rutas para la aplicación principal
 @main_routes.route('/')
 def index():
     return render_template('index.html')

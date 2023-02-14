@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Clínica Veterinaria Pulpin</title>
+    <title>{% block title %}{% endblock %} - Mi Veterinaria</title>
   </head>
   <body>
     <header>
+      <h1>Mi Veterinaria</h1>
       <nav>
         <ul>
           <li><a href="{{ url_for('main.index') }}">Inicio</a></li>
@@ -14,7 +15,21 @@
     </header>
 
     <main>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class="flashes">
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+
       {% block content %}{% endblock %}
     </main>
+
+    <footer>
+      <p>© 2023 - Mi Veterinaria</p>
+    </footer>
   </body>
 </html>
